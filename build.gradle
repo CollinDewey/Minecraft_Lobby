@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.1"
+}
+
+group 'net.minestorm.demo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    // Reminder: can be found at https://jitpack.io/#Minestom/Minestom
+    implementation 'com.github.Minestom:Minestom:19bb23fe3d'
+}
+
+jar {
+    manifest {
+        // WARNING: change the 'Main-Class' value
+        attributes 'Main-Class': 'net.minestom.demo.Main',
+                "Multi-Release": true
+    }
+}
