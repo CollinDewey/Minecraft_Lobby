@@ -1,6 +1,10 @@
 # Output build
 build
 
+# Various Game Files
+secret.txt
+extensions
+
 # Gradle
 .gradle
 

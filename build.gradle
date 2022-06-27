@@ -13,13 +13,13 @@ repositories {
 
 dependencies {
     // Reminder: can be found at https://jitpack.io/#Minestom/Minestom
-    implementation 'com.github.Minestom:Minestom:19bb23fe3d'
+    implementation 'com.github.Minestom:Minestom:feature~1.19-chat-SNAPSHOT'
 }
 
 jar {
     manifest {
         // WARNING: change the 'Main-Class' value
-        attributes 'Main-Class': 'net.minestom.demo.Main',
+        attributes 'Main-Class': 'lobby.Main',
                 "Multi-Release": true
     }
 }
