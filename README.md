@@ -1,23 +1,12 @@
-# Minecraft_Lobby
+# UofL Esports Minecraft Lobby
 The lobby for the UofL Esports Minecraft Server
 
-To build, install graalvm17 and gradle
+To build, you need gradle and Java JDK 17. `nix-shell -p gradle graalvm17-ce`
 
-nix-shell -p gradle graalvm17-ce
+Then build using gradle `gradle shadowJar`
 
-Then build
+After then, you can run the generated jar with `java -jar build/libs/Minecraft_Lobby-1.0-SNAPSHOT-all.jar`
 
-gradle shadowJar
+OR you can generate a native image using graalvm (if installed) `native-image -jar build/libs/Minecraft_Lobby-1.0-SNAPSHOT-all.jar`, then you can run the newly generated executable, `Minecraft_Lobby-1.0-SNAPSHOT`
 
-After then, you can run
-
-java -jar build/libs/Minecraft_Lobby-1.0-SNAPSHOT-all.jar
-
-OR
-
-native-image -jar build/libs/Minecraft_Lobby-1.0-SNAPSHOT-all.jar
-
-to get a native executable, Minecraft_Lobby-1.0-SNAPSHOT
-
-
-Do note: apparently the native executable has issues with lots of players on minestom but it really shouldn't matter for our case.
+Note: The native executable is actually slower due to slow record equals/hashcode
