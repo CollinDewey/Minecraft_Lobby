@@ -1,4 +1,4 @@
-FROM gradle:jdk17-alpine as builder
+FROM gradle:jdk17-focal as builder
 WORKDIR /build
 COPY src ./src
 COPY build.gradle ./
