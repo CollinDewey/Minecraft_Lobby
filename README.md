@@ -1,6 +1,11 @@
 # UofL Esports Minecraft Lobby
 The lobby for the UofL Esports Minecraft Server
 
+# Running
+
+With Docker, run using the included docker-compose.yml
+
+# Building
 To build, you need gradle and Java JDK 17. `nix-shell -p gradle graalvm17-ce`
 
 Then build using gradle `gradle shadowJar`
