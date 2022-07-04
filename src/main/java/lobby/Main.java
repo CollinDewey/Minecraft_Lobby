@@ -72,8 +72,7 @@ public class Main {
 
 		globalEventHandler.addListener(PlayerSpawnEvent.class, event -> {
 			final Player player = event.getPlayer();
-			final Vec facing = new Vec(15.5, 76, 0.5);
-			player.facePosition(Player.FacePoint.EYE, facing);
+			player.facePosition(Player.FacePoint.EYE, new Vec(15.5, 76, 0.5));
 			player.setGameMode(GameMode.ADVENTURE);
 			player.setAllowFlying(true);
 			
