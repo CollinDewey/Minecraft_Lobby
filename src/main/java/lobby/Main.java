@@ -145,9 +145,13 @@ public class Main {
 			// This needs to be changed once there are more than just two portals
 			else if (belowBlock.compare(Block.OBSIDIAN)) {
 				sendPlayerToServer(player, "survival");
+				player.teleport(new Pos(15.5, 70, -34.5));
+				player.facePosition(Player.FacePoint.EYE, new Vec(15.5, 71.5, -44));
 			}
 			else if (belowBlock.compare(Block.END_PORTAL)) {
 				sendPlayerToServer(player, "creative");
+				player.teleport(new Pos(15.5, 70, 35.5));
+				player.facePosition(Player.FacePoint.EYE, new Vec(15.5, 71.5, 44));
 			}
 
 		});
