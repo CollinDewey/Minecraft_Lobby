@@ -3,6 +3,7 @@ package lobby;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.Player;
 import net.minestom.server.entity.GameMode;
+import net.minestom.server.entity.hologram.Hologram;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.PlayerLoginEvent;
 import net.minestom.server.event.player.PlayerBlockPlaceEvent;
@@ -15,6 +16,8 @@ import net.minestom.server.coordinate.Vec;
 import net.minestom.server.world.biomes.Biome;
 import net.minestom.server.extras.velocity.VelocityProxy;
 import net.minestom.server.network.packet.server.play.PluginMessagePacket;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -53,6 +56,10 @@ public class Main {
 		instanceContainer.setChunkLoader(new AnvilLoader("world"));
 		instanceContainer.setTimeRate(0);
 		instanceContainer.setTime(6000);
+
+		Hologram welcomeHologram = new Hologram(instanceContainer, new Pos(3.5,71.4,0.5), Component.text("Welcome!").color(NamedTextColor.DARK_RED));
+		Hologram survivalHologram = new Hologram(instanceContainer, new Pos(15.5,71.5,-7.5), Component.text("Survival").color(NamedTextColor.GREEN));
+		Hologram creativeHologram = new Hologram(instanceContainer, new Pos(15.5,71.5,8.5), Component.text("Creative").color(NamedTextColor.AQUA));
 
 		// Add an event callback to specify the spawning instance (and the spawn position)
 		GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
@@ -158,7 +165,7 @@ public class Main {
 
 		// Start the server on port 25565
 		String forwardingSecret = new String();
-		
+
 		try {
 			File secretFile = new File("secret.txt");
 			Scanner secretReader = new Scanner(secretFile);
