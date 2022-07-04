@@ -18,6 +18,7 @@ import net.minestom.server.extras.velocity.VelocityProxy;
 import net.minestom.server.network.packet.server.play.PluginMessagePacket;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -79,6 +80,9 @@ public class Main {
 			if (player.getUsername().equals("Legit_Magic")) player.setGameMode(GameMode.CREATIVE);
 			//if (player.getUuid() == UUID.fromString("3732411a-84d8-481c-9920-14d5caf196c6")) player.setGameMode(GameMode.CREATIVE);
 
+			// https://minecraft.tools/en/json_text.php
+			final String welcomeMessage = "[\"\",{\"text\":\"Welcome to the\",\"color\":\"light_purple\"},{\"text\":\" University \"},{\"text\":\"of\",\"color\":\"red\"},{\"text\":\" Louisville \"},{\"text\":\"Esports\",\"color\":\"red\"},{\"text\":\" Club Minecraft Server\",\"color\":\"light_purple\"},{\"text\":\"\n\nBy playing on this server, you agree to these rules\n - Follow the rules of the \"},{\"text\":\"Discord\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://discord.gg/uoflesports\"}},{\"text\":\"\n - No Hacking\n - No Griefing\"}]";
+			player.sendMessage(GsonComponentSerializer.gson().deserialize(welcomeMessage));
 		});
 
 		// Make blocks only placeable by me
