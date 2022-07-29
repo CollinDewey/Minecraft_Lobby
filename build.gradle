@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     // Reminder: can be found at https://jitpack.io/#Minestom/Minestom
-    implementation 'com.github.Minestom:Minestom:feature~1.19-chat-SNAPSHOT'
+    implementation 'com.github.Minestom:Minestom:1.19-SNAPSHOT'
 }
 
 jar {
