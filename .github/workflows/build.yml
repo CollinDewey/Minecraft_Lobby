@@ -4,8 +4,9 @@ name: Build
 
 on:
   push: {}
+  workflow_dispatch:
 
-permissions: 
+permissions:
   packages: write
 
 jobs:
